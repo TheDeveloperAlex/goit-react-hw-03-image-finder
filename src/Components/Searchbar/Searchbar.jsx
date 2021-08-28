@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { toast } from "react-toastify";
 import s from "./Searchbar.module.css";
-// import "react-toastify/dist/ReactToastify.css";
 
 class Searchbar extends Component {
   state = {
@@ -16,15 +15,12 @@ class Searchbar extends Component {
   onHandleSubmit = (e) => {
     e.preventDefault();
     if (this.state.name.trim() === "") {
-      //   alert("Введите запрос");
       toast.error("Error, please enter text ");
       return;
     }
     this.props.onSubmit(this.state.name);
     document.getElementById("input").value = "";
     this.setState({ name: "" });
-    // console.log('ok');
-    // console.log(this.state.name);
   };
 
   render() {
